@@ -35,4 +35,36 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L', 'S'],
+      ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D', 'S'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L', 'S'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G', 'S'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L', 'S'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B', 'S'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I', 'S'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L', 'S'],
+    ], 'SEINFELD')
+
+    assert.isTrue(result);
+  });
+
+  it("should return false if the word is an empty string", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L', 'S'],
+      ['S', 'E', 'I', 'E', 'F', 'N', 'I', 'E', 'S'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L', 'S'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G', 'S'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L', 'S'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B', 'S'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I', 'S'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L', 'S'],
+    ], '  ')
+
+    assert.isFalse(result);
+  });
 });
